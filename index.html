@@ -242,6 +242,61 @@
     .callout-red { border-color: #ef4444; background: #fff1f2; color: #7f1d1d; }
     .callout-blue { border-color: #3b82f6; background: #eff6ff; color: #1e3a8a; }
 
+    /* ── Scan Blocks ── */
+    .content-block {
+      border: 1px solid #e5e5e5;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      background-color: #ffffff;
+    }
+
+    .content-block h2 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-bottom: 0.75rem;
+    }
+
+    .content-block p {
+      color: #475569;
+      font-size: 0.925rem;
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    .scan-list {
+      list-style: none;
+      padding: 0;
+      margin: 0.5rem 0 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .scan-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.55rem;
+      font-size: 0.9rem;
+      color: #475569;
+      line-height: 1.5;
+    }
+
+    .scan-list li::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #1d4ed8;
+      flex-shrink: 0;
+      margin-top: 0.45rem;
+    }
+
+    .scan-list.red li::before { background: #b91c1c; }
+    .scan-list.green li::before { background: #15803d; }
+    .scan-list.purple li::before { background: #7c3aed; }
+
     /* ── Solution page ── */
     .solution-hero {
       background: linear-gradient(135deg, #0f4c81 0%, #1d4ed8 60%, #0891b2 100%);
@@ -471,42 +526,70 @@
 
       <div class="grid-2">
         <div>
-          <div class="step">
-            <div class="step-num" style="background:#b91c1c;">1</div>
-            <div>
-              <h3>No Single Source of Truth</h3>
-              <p style="color:#64748b;margin-top:0.25rem;line-height:1.6;">Files live across email, shared drives, local machines, and SaaS tools — with no authoritative record of which is current.</p>
+          <section class="content-block">
+            <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem;">
+              <div class="step-num" style="background:#b91c1c;width:28px;height:28px;font-size:0.8rem;flex-shrink:0;">1</div>
+              <h2>No Single Source of Truth</h2>
             </div>
-          </div>
-          <div class="step">
-            <div class="step-num" style="background:#b91c1c;">2</div>
-            <div>
-              <h3>Manual Processes &amp; Naming Conventions</h3>
-              <p style="color:#64748b;margin-top:0.25rem;line-height:1.6;">Teams rely on file naming like "final_v2_REVISED_USE THIS ONE.docx" — a fragile, error-prone system that breaks under scale.</p>
+            <ul class="scan-list red">
+              <li>Files scattered across email, shared drives, and local machines</li>
+              <li>No authoritative record of which version is current</li>
+              <li>Teams unknowingly work from outdated documents</li>
+            </ul>
+          </section>
+
+          <section class="content-block">
+            <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem;">
+              <div class="step-num" style="background:#b91c1c;width:28px;height:28px;font-size:0.8rem;flex-shrink:0;">2</div>
+              <h2>Manual Naming Conventions</h2>
             </div>
-          </div>
-          <div class="step">
-            <div class="step-num" style="background:#b91c1c;">3</div>
-            <div>
-              <h3>Siloed Teams &amp; Tools</h3>
-              <p style="color:#64748b;margin-top:0.25rem;line-height:1.6;">Legal, operations, and product each use different tools with no shared version layer — causing divergence and rework.</p>
+            <ul class="scan-list red">
+              <li>Teams rely on names like <em>"final_v2_REVISED_USE THIS ONE.docx"</em></li>
+              <li>Fragile and error-prone at any scale</li>
+              <li>No enforcement — conventions drift person to person</li>
+            </ul>
+          </section>
+
+          <section class="content-block">
+            <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.6rem;">
+              <div class="step-num" style="background:#b91c1c;width:28px;height:28px;font-size:0.8rem;flex-shrink:0;">3</div>
+              <h2>Siloed Teams &amp; Tools</h2>
             </div>
-          </div>
+            <ul class="scan-list red">
+              <li>Legal, operations, and product use separate tools</li>
+              <li>No shared version layer across departments</li>
+              <li>Divergence and rework multiply with every handoff</li>
+            </ul>
+          </section>
         </div>
 
         <div>
-          <div class="callout callout-red">
-            <strong>Compliance Risk</strong><br />
-            Without version audit trails, regulated industries face serious exposure during audits, reviews, and legal discovery.
-          </div>
-          <div class="callout callout-red" style="margin-top:1rem;">
-            <strong>AI Adoption Blocked</strong><br />
-            AI tools are only as reliable as the data they're trained on. Version chaos means AI outputs based on stale or conflicting source documents — undermining trust in automation.
-          </div>
-          <div class="callout callout-red" style="margin-top:1rem;">
-            <strong>Leadership Blind Spots</strong><br />
-            Executives can't make confident decisions when it's unclear which version of a policy, analysis, or report is current.
-          </div>
+          <section class="content-block" style="border-color:#fca5a5;background:#fff1f2;">
+            <h2 style="color:#b91c1c;display:flex;align-items:center;gap:0.5rem;"><i class="fa-solid fa-triangle-exclamation" style="font-size:0.9rem;"></i> Compliance Risk</h2>
+            <ul class="scan-list red">
+              <li>No audit trail of who changed what, or when</li>
+              <li>Regulated industries exposed during audits and legal discovery</li>
+              <li>Non-compliance findings can cost $250K+ per incident</li>
+            </ul>
+          </section>
+
+          <section class="content-block" style="border-color:#fca5a5;background:#fff1f2;">
+            <h2 style="color:#b91c1c;display:flex;align-items:center;gap:0.5rem;"><i class="fa-solid fa-robot" style="font-size:0.9rem;"></i> AI Adoption Blocked</h2>
+            <ul class="scan-list red">
+              <li>AI outputs are only as good as the data they reason over</li>
+              <li>Stale or conflicting documents corrupt AI responses</li>
+              <li>Version chaos makes AI an unreliable risk, not an asset</li>
+            </ul>
+          </section>
+
+          <section class="content-block" style="border-color:#fca5a5;background:#fff1f2;">
+            <h2 style="color:#b91c1c;display:flex;align-items:center;gap:0.5rem;"><i class="fa-solid fa-eye-slash" style="font-size:0.9rem;"></i> Leadership Blind Spots</h2>
+            <ul class="scan-list red">
+              <li>Unclear which version of a report or policy is current</li>
+              <li>Decisions made on outdated information</li>
+              <li>Loss of confidence across executive and board level</li>
+            </ul>
+          </section>
         </div>
       </div>
 
@@ -543,42 +626,74 @@
         <div class="card">
           <div class="icon-circle" style="background:#dbeafe;color:#1d4ed8;"><i class="fa-solid fa-database"></i></div>
           <h3>Single Source of Truth</h3>
-          <p style="color:#64748b;margin-top:0.5rem;line-height:1.6;">Every document has one canonical home with full version history — no more hunting across drives, inboxes, or chat threads.</p>
+          <ul class="scan-list" style="margin-top:0.75rem;">
+            <li>One canonical home for every document</li>
+            <li>Full version history always accessible</li>
+            <li>No more hunting across drives or inboxes</li>
+          </ul>
         </div>
         <div class="card">
           <div class="icon-circle" style="background:#ede9fe;color:#7c3aed;"><i class="fa-solid fa-robot"></i></div>
           <h3>AI-Assisted Governance</h3>
-          <p style="color:#64748b;margin-top:0.5rem;line-height:1.6;">AI surfaces conflicts, summarizes changes between versions, and flags documents at risk of becoming stale or out of compliance.</p>
+          <ul class="scan-list" style="margin-top:0.75rem;">
+            <li>Surfaces version conflicts automatically</li>
+            <li>Summarizes changes between drafts</li>
+            <li>Flags stale or non-compliant documents</li>
+          </ul>
         </div>
         <div class="card">
           <div class="icon-circle" style="background:#dcfce7;color:#15803d;"><i class="fa-solid fa-shield-halved"></i></div>
           <h3>Audit-Ready Compliance</h3>
-          <p style="color:#64748b;margin-top:0.5rem;line-height:1.6;">Immutable audit trails capture who changed what, when, and why — making compliance reviews fast and defensible.</p>
+          <ul class="scan-list" style="margin-top:0.75rem;">
+            <li>Immutable trail of who changed what and when</li>
+            <li>Compliance reviews completed in days, not weeks</li>
+            <li>Defensible record for audits and legal discovery</li>
+          </ul>
         </div>
         <div class="card">
           <div class="icon-circle" style="background:#fef9c3;color:#a16207;"><i class="fa-solid fa-users"></i></div>
           <h3>Cross-Team Collaboration</h3>
-          <p style="color:#64748b;margin-top:0.5rem;line-height:1.6;">Legal, ops, product, and finance work from the same version layer — eliminating silos and reducing rework.</p>
+          <ul class="scan-list" style="margin-top:0.75rem;">
+            <li>Legal, ops, product, and finance on one version layer</li>
+            <li>Eliminates departmental silos</li>
+            <li>Reduces rework from conflicting edits</li>
+          </ul>
         </div>
         <div class="card">
           <div class="icon-circle" style="background:#ffe4e6;color:#be123c;"><i class="fa-solid fa-bell"></i></div>
           <h3>Smart Notifications</h3>
-          <p style="color:#64748b;margin-top:0.5rem;line-height:1.6;">Stakeholders are automatically notified when documents they own or depend on are updated, approved, or flagged.</p>
+          <ul class="scan-list" style="margin-top:0.75rem;">
+            <li>Auto-alerts when owned documents are updated</li>
+            <li>Approval and flagging events pushed in real time</li>
+            <li>No manual tracking or follow-up needed</li>
+          </ul>
         </div>
         <div class="card">
           <div class="icon-circle" style="background:#dbeafe;color:#0284c7;"><i class="fa-solid fa-plug"></i></div>
           <h3>Integrates with Your Stack</h3>
-          <p style="color:#64748b;margin-top:0.5rem;line-height:1.6;">Native connectors for SharePoint, Google Drive, Confluence, Jira, Salesforce, and your existing SSO provider.</p>
+          <ul class="scan-list" style="margin-top:0.75rem;">
+            <li>SharePoint, Google Drive, Confluence, Jira</li>
+            <li>Salesforce and existing SSO / IdP</li>
+            <li>No rip-and-replace — works alongside your tools</li>
+          </ul>
         </div>
         <div class="card">
           <div class="icon-circle" style="background:#fef3c7;color:#d97706;"><i class="fa-solid fa-code-branch"></i></div>
           <h3>Branching &amp; Parallel Drafts</h3>
-          <p style="color:#64748b;margin-top:0.5rem;line-height:1.6;">Teams can work on competing drafts simultaneously without overwriting each other — then merge, compare, or promote the winning version with one click.</p>
+          <ul class="scan-list" style="margin-top:0.75rem;">
+            <li>Multiple drafts in parallel without overwriting</li>
+            <li>Merge, compare, or promote with one click</li>
+            <li>Full history preserved across all branches</li>
+          </ul>
         </div>
         <div class="card">
           <div class="icon-circle" style="background:#fce7f3;color:#be185d;"><i class="fa-solid fa-lock"></i></div>
           <h3>Role-Based Access Control</h3>
-          <p style="color:#64748b;margin-top:0.5rem;line-height:1.6;">Granular permissions ensure the right people can view, edit, approve, or archive documents — with full visibility into who has access to what.</p>
+          <ul class="scan-list" style="margin-top:0.75rem;">
+            <li>Granular view / edit / approve / archive permissions</li>
+            <li>Full visibility into who has access to what</li>
+            <li>Access changes logged and auditable</li>
+          </ul>
         </div>
       </div>
 
@@ -595,28 +710,48 @@
             <h2 style="color:#fff;font-size:1.75rem;margin:0;">Meet GovStrategy</h2>
           </div>
         </div>
-        <p style="color:#bae6fd;font-size:1.05rem;line-height:1.7;max-width:760px;margin-bottom:2.5rem;">GovStrategy isn't just a platform — it's an always-on AI agent embedded directly into your document workflows. It observes, reasons, and acts autonomously to keep your organization's knowledge current, compliant, and trustworthy — without requiring manual intervention.</p>
+        <ul class="scan-list" style="margin-bottom:2.5rem;max-width:760px;">
+          <li style="color:#bae6fd;">Always-on AI agent embedded directly in your document workflows</li>
+          <li style="color:#bae6fd;">Observes, reasons, and acts — without manual intervention</li>
+          <li style="color:#bae6fd;">Keeps your organization's knowledge current, compliant, and trustworthy</li>
+        </ul>
 
         <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem;margin-bottom:2.5rem;">
           <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:1.5rem;">
             <div style="font-size:1.5rem;margin-bottom:0.75rem;">👁️</div>
             <h3 style="color:#e0f2fe;font-size:1rem;margin-bottom:0.4rem;">Observes Continuously</h3>
-            <p style="color:#94a3b8;font-size:0.9rem;line-height:1.6;">The agent monitors all document activity in real time — edits, uploads, shares, and approvals — building a live map of your content ecosystem.</p>
+            <ul class="scan-list" style="margin-top:0.5rem;">
+              <li style="color:#94a3b8;">Monitors edits, uploads, shares, and approvals in real time</li>
+              <li style="color:#94a3b8;">Builds a live map of your content ecosystem</li>
+              <li style="color:#94a3b8;">Zero configuration — starts watching from day one</li>
+            </ul>
           </div>
           <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:1.5rem;">
             <div style="font-size:1.5rem;margin-bottom:0.75rem;">🧠</div>
             <h3 style="color:#e0f2fe;font-size:1rem;margin-bottom:0.4rem;">Reasons Over Context</h3>
-            <p style="color:#94a3b8;font-size:0.9rem;line-height:1.6;">GovStrategy understands relationships between documents, owners, deadlines, and policies — surfacing risks and conflicts before they become problems.</p>
+            <ul class="scan-list" style="margin-top:0.5rem;">
+              <li style="color:#94a3b8;">Understands relationships between docs, owners, and policies</li>
+              <li style="color:#94a3b8;">Surfaces risks and conflicts before they escalate</li>
+              <li style="color:#94a3b8;">Cross-references deadlines, approvals, and change history</li>
+            </ul>
           </div>
           <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:1.5rem;">
             <div style="font-size:1.5rem;margin-bottom:0.75rem;">⚡</div>
             <h3 style="color:#e0f2fe;font-size:1rem;margin-bottom:0.4rem;">Acts Autonomously</h3>
-            <p style="color:#94a3b8;font-size:0.9rem;line-height:1.6;">From auto-tagging and version promotion to routing approvals and drafting change summaries — the agent handles routine governance tasks end-to-end.</p>
+            <ul class="scan-list" style="margin-top:0.5rem;">
+              <li style="color:#94a3b8;">Auto-tags, promotes versions, and routes approvals</li>
+              <li style="color:#94a3b8;">Drafts change summaries without human prompting</li>
+              <li style="color:#94a3b8;">Handles routine governance tasks end-to-end</li>
+            </ul>
           </div>
           <div style="background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:14px;padding:1.5rem;">
             <div style="font-size:1.5rem;margin-bottom:0.75rem;">💬</div>
             <h3 style="color:#e0f2fe;font-size:1rem;margin-bottom:0.4rem;">Answers Your Questions</h3>
-            <p style="color:#94a3b8;font-size:0.9rem;line-height:1.6;">Ask GovStrategy anything: "Which version of this policy is approved?", "Who last modified this contract?", "What changed since the last review?" — and get an instant, cited answer.</p>
+            <ul class="scan-list" style="margin-top:0.5rem;">
+              <li style="color:#94a3b8;">"Which version of this policy is approved?"</li>
+              <li style="color:#94a3b8;">"Who last modified this contract?"</li>
+              <li style="color:#94a3b8;">"What changed since the last review?" — instant, cited answers</li>
+            </ul>
           </div>
         </div>
 
@@ -657,34 +792,50 @@
       <h2 style="margin-bottom:1.5rem;">Getting There in Four Phases</h2>
 
       <div style="max-width:720px;">
-        <div class="step">
-          <div class="step-num">1</div>
-          <div>
-            <h3>Discovery &amp; Audit <span style="color:#94a3b8;font-weight:400;font-size:0.9rem;">— Weeks 1–2</span></h3>
-            <p style="color:#64748b;margin-top:0.25rem;line-height:1.6;">Map current document repositories, identify top pain points, and baseline the cost of version sprawl across business units.</p>
+        <section class="content-block">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+            <div class="step-num" style="flex-shrink:0;">1</div>
+            <h2>Discovery &amp; Audit <span style="color:#94a3b8;font-weight:400;font-size:0.85rem;"> — Weeks 1–2</span></h2>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">2</div>
-          <div>
-            <h3>Platform Configuration <span style="color:#94a3b8;font-weight:400;font-size:0.9rem;">— Weeks 3–6</span></h3>
-            <p style="color:#64748b;margin-top:0.25rem;line-height:1.6;">Deploy the core version control layer, configure access controls, and integrate with existing tooling and SSO.</p>
+          <ul class="scan-list">
+            <li>Map all current document repositories across business units</li>
+            <li>Identify top version-confusion pain points</li>
+            <li>Baseline the productivity cost of version sprawl</li>
+          </ul>
+        </section>
+        <section class="content-block">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+            <div class="step-num" style="flex-shrink:0;">2</div>
+            <h2>Platform Configuration <span style="color:#94a3b8;font-weight:400;font-size:0.85rem;"> — Weeks 3–6</span></h2>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">3</div>
-          <div>
-            <h3>Pilot &amp; Adoption <span style="color:#94a3b8;font-weight:400;font-size:0.9rem;">— Weeks 7–10</span></h3>
-            <p style="color:#64748b;margin-top:0.25rem;line-height:1.6;">Roll out to a pilot team, gather feedback, tune workflows, and build internal champions for the broader launch.</p>
+          <ul class="scan-list">
+            <li>Deploy the core version control and governance layer</li>
+            <li>Configure role-based access controls and permissions</li>
+            <li>Integrate with existing tooling and SSO / IdP</li>
+          </ul>
+        </section>
+        <section class="content-block">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+            <div class="step-num" style="flex-shrink:0;">3</div>
+            <h2>Pilot &amp; Adoption <span style="color:#94a3b8;font-weight:400;font-size:0.85rem;"> — Weeks 7–10</span></h2>
           </div>
-        </div>
-        <div class="step">
-          <div class="step-num">4</div>
-          <div>
-            <h3>Enterprise Rollout <span style="color:#94a3b8;font-weight:400;font-size:0.9rem;">— Week 11+</span></h3>
-            <p style="color:#64748b;margin-top:0.25rem;line-height:1.6;">Expand to all business units with training, governance policies, and ongoing AI-assisted monitoring in place.</p>
+          <ul class="scan-list">
+            <li>Roll out to a high-impact pilot team first</li>
+            <li>Gather feedback and tune workflows</li>
+            <li>Build internal champions for the enterprise launch</li>
+          </ul>
+        </section>
+        <section class="content-block">
+          <div style="display:flex;align-items:center;gap:0.75rem;margin-bottom:0.5rem;">
+            <div class="step-num" style="flex-shrink:0;">4</div>
+            <h2>Enterprise Rollout <span style="color:#94a3b8;font-weight:400;font-size:0.85rem;"> — Week 11+</span></h2>
           </div>
-        </div>
+          <ul class="scan-list">
+            <li>Expand to all business units with structured training</li>
+            <li>Enforce governance policies organization-wide</li>
+            <li>Activate ongoing AI-assisted monitoring and reporting</li>
+          </ul>
+        </section>
       </div>
 
       <hr class="divider" />
@@ -799,17 +950,29 @@
         <div class="card">
           <div class="icon-circle" style="background:#ede9fe;color:#7c3aed;"><i class="fa-solid fa-microchip"></i></div>
           <h3>AI Readiness</h3>
-          <p style="color:#64748b;margin-top:0.5rem;line-height:1.6;">70% of Fortune 500 companies are moving to AI-driven governance by 2026. Version control is the prerequisite layer.</p>
+          <ul class="scan-list purple" style="margin-top:0.75rem;">
+            <li>70% of Fortune 500 moving to AI governance by 2026</li>
+            <li>Version control is the required prerequisite layer</li>
+            <li>Clean data in = trustworthy AI out</li>
+          </ul>
         </div>
         <div class="card">
           <div class="icon-circle" style="background:#dcfce7;color:#15803d;"><i class="fa-solid fa-handshake"></i></div>
           <h3>Stakeholder Trust</h3>
-          <p style="color:#64748b;margin-top:0.5rem;line-height:1.6;">Leaders and boards gain confidence when they know every report, policy, and analysis is definitively current and traceable.</p>
+          <ul class="scan-list green" style="margin-top:0.75rem;">
+            <li>Every report, policy, and analysis definitively current</li>
+            <li>Full traceability back to the source and author</li>
+            <li>Boards and leaders make decisions with confidence</li>
+          </ul>
         </div>
         <div class="card">
           <div class="icon-circle" style="background:#dbeafe;color:#1d4ed8;"><i class="fa-solid fa-trophy"></i></div>
           <h3>Competitive Advantage</h3>
-          <p style="color:#64748b;margin-top:0.5rem;line-height:1.6;">Organizations with mature document governance move faster, make better decisions, and attract top talent who expect modern tooling.</p>
+          <ul class="scan-list" style="margin-top:0.75rem;">
+            <li>Governed organizations move faster and decide better</li>
+            <li>Attract talent who expect modern, reliable tooling</li>
+            <li>Reduce time-to-market on document-dependent work</li>
+          </ul>
         </div>
       </div>
 
