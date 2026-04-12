@@ -345,7 +345,7 @@
         <button class="nav-link" id="nav-problem" onclick="showPage('problem')">Problem</button>
         <button class="nav-link" id="nav-solution" onclick="showPage('solution')">Solution</button>
         <button class="nav-link" id="nav-roi" onclick="showPage('roi')">ROI &amp; Impact</button>
-        <button class="nav-cta" onclick="showPage('solution')">Get Started <i class="fa-solid fa-arrow-right"></i></button>
+        <button class="nav-cta" id="nav-getstarted" onclick="showPage('getstarted')">Get Started <i class="fa-solid fa-arrow-right"></i></button>
       </div>
       <button class="nav-mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
         <i class="fa-solid fa-bars" id="menuIcon"></i>
@@ -364,7 +364,7 @@
         <p class="lead">Elevate document governance and unlock AI-assisted collaboration to secure your enterprise's future.</p>
         <div class="btn-group">
           <button class="btn btn-white" onclick="showPage('problem')">Explore the Problem <i class="fa-solid fa-arrow-right"></i></button>
-          <button class="btn btn-outline" onclick="showPage('solution')">View Solutions</button>
+          <button class="btn btn-outline" onclick="showPage('getstarted')">Get Started <i class="fa-solid fa-arrow-right"></i></button>
         </div>
         <div class="hero-stats">
           <div class="hero-stat">
@@ -415,12 +415,12 @@
           <p style="color:#1d4ed8;font-weight:600;margin-top:1rem;font-size:0.9rem;">Read more <i class="fa-solid fa-arrow-right"></i></p>
         </div>
 
-        <div class="card" style="background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:#fff;cursor:pointer;grid-column:1/-1;" onclick="showPage('solution')">
+        <div class="card" style="background:linear-gradient(135deg,#1e3a8a,#1d4ed8);color:#fff;cursor:pointer;grid-column:1/-1;" onclick="showPage('getstarted')">
           <div class="icon-circle" style="background:rgba(255,255,255,0.15);color:#fff;"><i class="fa-solid fa-rocket"></i></div>
           <div class="tag" style="background:rgba(255,255,255,0.15);color:#bfdbfe;">Get Started</div>
           <h3 style="color:#fff;">Ready to Begin?</h3>
-          <p style="color:#bfdbfe;margin-top:0.5rem;line-height:1.6;">Jump straight to the solution framework and see the implementation roadmap designed for your organization.</p>
-          <p style="color:#93c5fd;font-weight:600;margin-top:1rem;font-size:0.9rem;">View Solution <i class="fa-solid fa-arrow-right"></i></p>
+          <p style="color:#bfdbfe;margin-top:0.5rem;line-height:1.6;">See pricing, choose the right plan for your organization, and connect with a GovStrategy sales expert.</p>
+          <p style="color:#93c5fd;font-weight:600;margin-top:1rem;font-size:0.9rem;">View Pricing &amp; Get Started <i class="fa-solid fa-arrow-right"></i></p>
         </div>
       </div>
     </div>
@@ -689,8 +689,9 @@
       <hr class="divider" />
 
       <div style="text-align:center;">
-        <p class="lead" style="margin-bottom:1.5rem;">See the quantified business case for making this investment.</p>
-        <button class="btn btn-primary" onclick="showPage('roi')">View ROI &amp; Impact <i class="fa-solid fa-arrow-right"></i></button>
+        <p class="lead" style="margin-bottom:1.5rem;">See the quantified business case for making this investment, or jump straight to pricing.</p>
+        <button class="btn btn-primary" onclick="showPage('roi')" style="margin-right:0.75rem;">View ROI &amp; Impact <i class="fa-solid fa-arrow-right"></i></button>
+        <button class="btn" style="background:#eff6ff;color:#1d4ed8;border:1.5px solid #bfdbfe;" onclick="showPage('getstarted')">See Pricing <i class="fa-solid fa-tag"></i></button>
       </div>
     </div>
   </div>
@@ -814,15 +815,237 @@
       <hr class="divider" />
 
       <div style="text-align:center;">
-        <p class="lead" style="margin-bottom:1.5rem;">Ready to build the business case internally? Start with the solution overview.</p>
-        <button class="btn btn-primary" onclick="showPage('solution')" style="margin-right:1rem;">View the Solution <i class="fa-solid fa-arrow-right"></i></button>
+        <p class="lead" style="margin-bottom:1.5rem;">Ready to build the business case internally? See pricing or connect with our team.</p>
+        <button class="btn btn-primary" onclick="showPage('getstarted')" style="margin-right:0.75rem;">Get Started &amp; See Pricing <i class="fa-solid fa-arrow-right"></i></button>
         <button class="btn" style="background:#f1f5f9;color:#1e293b;" onclick="showPage('home')">Back to Home</button>
       </div>
     </div>
   </div>
 
+  <!-- ══════════════════════════════════════
+       PAGE 5 — GET STARTED / PRICING
+  ══════════════════════════════════════ -->
+  <div class="page" id="page-getstarted">
+
+    <!-- Hero -->
+    <div style="background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 60%,#3b82f6 100%);color:#fff;padding:4.5rem 1.5rem 3.5rem;border-radius:0 0 3rem 3rem;text-align:center;">
+      <div class="container">
+        <div class="tag" style="background:rgba(255,255,255,0.15);color:#bfdbfe;">Pricing &amp; Plans</div>
+        <h1>Simple, Transparent Pricing</h1>
+        <p class="lead" style="color:#bfdbfe;max-width:600px;margin:1rem auto 0;">Choose the plan that fits your organization. Every tier includes the GovStrategy Embedded CoPilot Agent. No hidden fees.</p>
+      </div>
+    </div>
+
+    <div class="section">
+
+      <!-- ── Pricing Toggle ── -->
+      <div style="display:flex;align-items:center;justify-content:center;gap:0.75rem;margin-bottom:3rem;">
+        <span style="font-weight:600;color:#1e293b;font-size:0.95rem;">Monthly</span>
+        <label style="position:relative;display:inline-block;width:48px;height:26px;cursor:pointer;">
+          <input type="checkbox" id="billingToggle" style="opacity:0;width:0;height:0;" onchange="toggleBilling()">
+          <span style="position:absolute;inset:0;background:#cbd5e1;border-radius:999px;transition:background 0.2s;" id="toggleTrack"></span>
+          <span style="position:absolute;top:3px;left:3px;width:20px;height:20px;background:#fff;border-radius:50%;transition:transform 0.2s;box-shadow:0 1px 3px rgba(0,0,0,0.2);" id="toggleThumb"></span>
+        </label>
+        <span style="font-weight:600;color:#1e293b;font-size:0.95rem;">Annual</span>
+        <span style="background:#dcfce7;color:#15803d;font-size:0.75rem;font-weight:700;padding:0.2rem 0.6rem;border-radius:999px;">Save 20%</span>
+      </div>
+
+      <!-- ── Pricing Tiers ── -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;align-items:start;margin-bottom:1rem;">
+
+        <!-- Starter -->
+        <div class="card" style="position:relative;">
+          <div class="tag tag-blue">Starter</div>
+          <div style="margin-bottom:1.5rem;">
+            <div style="display:flex;align-items:baseline;gap:0.25rem;">
+              <span style="font-size:2.75rem;font-weight:800;color:#1e293b;" class="price-val" data-monthly="49" data-annual="39">$49</span>
+              <span style="color:#94a3b8;font-size:0.9rem;">/user/mo</span>
+            </div>
+            <p style="color:#64748b;font-size:0.9rem;margin-top:0.25rem;" class="price-sub">Billed monthly</p>
+          </div>
+          <p style="color:#475569;font-size:0.95rem;line-height:1.6;margin-bottom:1.5rem;">Perfect for small teams getting version control under control for the first time.</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2rem;">
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#334155;"><i class="fa-solid fa-check" style="color:#1d4ed8;margin-top:2px;flex-shrink:0;"></i> Up to 25 users</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#334155;"><i class="fa-solid fa-check" style="color:#1d4ed8;margin-top:2px;flex-shrink:0;"></i> Single source of truth</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#334155;"><i class="fa-solid fa-check" style="color:#1d4ed8;margin-top:2px;flex-shrink:0;"></i> Full version history</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#334155;"><i class="fa-solid fa-check" style="color:#1d4ed8;margin-top:2px;flex-shrink:0;"></i> Smart notifications</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#334155;"><i class="fa-solid fa-check" style="color:#1d4ed8;margin-top:2px;flex-shrink:0;"></i> 2 integrations</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#94a3b8;"><i class="fa-solid fa-minus" style="margin-top:2px;flex-shrink:0;"></i> AI CoPilot Agent</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#94a3b8;"><i class="fa-solid fa-minus" style="margin-top:2px;flex-shrink:0;"></i> Audit-ready compliance</li>
+          </ul>
+          <button class="btn btn-primary" style="width:100%;justify-content:center;display:flex;" onclick="scrollToContact('Starter')">Start Free Trial</button>
+          <p style="text-align:center;font-size:0.8rem;color:#94a3b8;margin-top:0.6rem;">14-day free trial · No credit card</p>
+        </div>
+
+        <!-- Professional — Featured -->
+        <div class="card" style="position:relative;border:2px solid #1d4ed8;box-shadow:0 8px 32px rgba(29,78,216,0.18);transform:scale(1.02);">
+          <div style="position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:#1d4ed8;color:#fff;font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;padding:0.3rem 1rem;border-radius:999px;white-space:nowrap;">Most Popular</div>
+          <div class="tag" style="background:#dbeafe;color:#1d4ed8;">Professional</div>
+          <div style="margin-bottom:1.5rem;">
+            <div style="display:flex;align-items:baseline;gap:0.25rem;">
+              <span style="font-size:2.75rem;font-weight:800;color:#1d4ed8;" class="price-val" data-monthly="149" data-annual="119">$149</span>
+              <span style="color:#94a3b8;font-size:0.9rem;">/user/mo</span>
+            </div>
+            <p style="color:#64748b;font-size:0.9rem;margin-top:0.25rem;" class="price-sub">Billed monthly</p>
+          </div>
+          <p style="color:#475569;font-size:0.95rem;line-height:1.6;margin-bottom:1.5rem;">The full GovStrategy platform for growing teams with compliance requirements.</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2rem;">
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#334155;"><i class="fa-solid fa-check" style="color:#1d4ed8;margin-top:2px;flex-shrink:0;"></i> Up to 250 users</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#334155;"><i class="fa-solid fa-check" style="color:#1d4ed8;margin-top:2px;flex-shrink:0;"></i> Everything in Starter</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#334155;"><i class="fa-solid fa-check" style="color:#1d4ed8;margin-top:2px;flex-shrink:0;"></i> <strong>AI CoPilot Agent</strong></li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#334155;"><i class="fa-solid fa-check" style="color:#1d4ed8;margin-top:2px;flex-shrink:0;"></i> Audit-ready compliance</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#334155;"><i class="fa-solid fa-check" style="color:#1d4ed8;margin-top:2px;flex-shrink:0;"></i> Branching &amp; parallel drafts</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#334155;"><i class="fa-solid fa-check" style="color:#1d4ed8;margin-top:2px;flex-shrink:0;"></i> Role-based access control</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#334155;"><i class="fa-solid fa-check" style="color:#1d4ed8;margin-top:2px;flex-shrink:0;"></i> Unlimited integrations</li>
+          </ul>
+          <button class="btn btn-primary" style="width:100%;justify-content:center;display:flex;" onclick="scrollToContact('Professional')">Start Free Trial</button>
+          <p style="text-align:center;font-size:0.8rem;color:#94a3b8;margin-top:0.6rem;">14-day free trial · No credit card</p>
+        </div>
+
+        <!-- Enterprise -->
+        <div class="card" style="position:relative;background:#0f172a;border-color:#1e3a8a;">
+          <div class="tag" style="background:rgba(56,189,248,0.15);color:#38bdf8;">Enterprise</div>
+          <div style="margin-bottom:1.5rem;">
+            <div style="display:flex;align-items:baseline;gap:0.25rem;">
+              <span style="font-size:2.75rem;font-weight:800;color:#fff;">Custom</span>
+            </div>
+            <p style="color:#64748b;font-size:0.9rem;margin-top:0.25rem;">Volume pricing available</p>
+          </div>
+          <p style="color:#94a3b8;font-size:0.95rem;line-height:1.6;margin-bottom:1.5rem;">Built for large-scale deployments, regulated industries, and organizations with complex governance needs.</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:0.65rem;margin-bottom:2rem;">
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#cbd5e1;"><i class="fa-solid fa-check" style="color:#38bdf8;margin-top:2px;flex-shrink:0;"></i> Unlimited users</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#cbd5e1;"><i class="fa-solid fa-check" style="color:#38bdf8;margin-top:2px;flex-shrink:0;"></i> Everything in Professional</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#cbd5e1;"><i class="fa-solid fa-check" style="color:#38bdf8;margin-top:2px;flex-shrink:0;"></i> Dedicated CoPilot training</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#cbd5e1;"><i class="fa-solid fa-check" style="color:#38bdf8;margin-top:2px;flex-shrink:0;"></i> Custom SLA &amp; uptime guarantee</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#cbd5e1;"><i class="fa-solid fa-check" style="color:#38bdf8;margin-top:2px;flex-shrink:0;"></i> On-prem or private cloud</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#cbd5e1;"><i class="fa-solid fa-check" style="color:#38bdf8;margin-top:2px;flex-shrink:0;"></i> Dedicated success manager</li>
+            <li style="display:flex;gap:0.6rem;align-items:flex-start;font-size:0.9rem;color:#cbd5e1;"><i class="fa-solid fa-check" style="color:#38bdf8;margin-top:2px;flex-shrink:0;"></i> Priority 24/7 support</li>
+          </ul>
+          <button class="btn" style="width:100%;justify-content:center;display:flex;background:rgba(56,189,248,0.15);border:1.5px solid rgba(56,189,248,0.4);color:#e0f2fe;" onclick="scrollToContact('Enterprise')">Talk to Sales</button>
+          <p style="text-align:center;font-size:0.8rem;color:#475569;margin-top:0.6rem;">Response within 1 business day</p>
+        </div>
+
+      </div>
+
+      <!-- Trust bar -->
+      <div style="text-align:center;padding:1.5rem 0;border-top:1px solid #f1f5f9;border-bottom:1px solid #f1f5f9;margin:2.5rem 0;display:flex;flex-wrap:wrap;justify-content:center;gap:2rem;">
+        <span style="display:flex;align-items:center;gap:0.5rem;color:#64748b;font-size:0.9rem;font-weight:500;"><i class="fa-solid fa-shield-halved" style="color:#1d4ed8;"></i> SOC 2 Type II</span>
+        <span style="display:flex;align-items:center;gap:0.5rem;color:#64748b;font-size:0.9rem;font-weight:500;"><i class="fa-solid fa-lock" style="color:#1d4ed8;"></i> GDPR Compliant</span>
+        <span style="display:flex;align-items:center;gap:0.5rem;color:#64748b;font-size:0.9rem;font-weight:500;"><i class="fa-solid fa-rotate" style="color:#1d4ed8;"></i> 99.9% Uptime SLA</span>
+        <span style="display:flex;align-items:center;gap:0.5rem;color:#64748b;font-size:0.9rem;font-weight:500;"><i class="fa-solid fa-circle-check" style="color:#1d4ed8;"></i> Cancel Anytime</span>
+      </div>
+
+      <!-- ── Learn More / Contact Form ── -->
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:3rem;align-items:start;" id="contact-section">
+
+        <!-- Left: Why talk to us -->
+        <div>
+          <div class="tag tag-blue">Talk to an Expert</div>
+          <h2 style="margin-bottom:1rem;">Not sure which plan is right for you?</h2>
+          <p style="color:#64748b;line-height:1.7;margin-bottom:1.5rem;">Our GovStrategy sales team will help you scope the right solution, build the internal business case, and design an implementation plan tailored to your organization's size, industry, and compliance requirements.</p>
+
+          <div style="display:flex;flex-direction:column;gap:1rem;">
+            <div style="display:flex;gap:0.875rem;align-items:flex-start;">
+              <div style="width:40px;height:40px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fa-solid fa-magnifying-glass-chart" style="color:#1d4ed8;"></i></div>
+              <div>
+                <div style="font-weight:600;color:#1e293b;font-size:0.95rem;">Free Discovery Call</div>
+                <div style="color:#64748b;font-size:0.875rem;line-height:1.5;margin-top:0.2rem;">30 minutes with a governance expert to map your current pain points and identify quick wins.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:0.875rem;align-items:flex-start;">
+              <div style="width:40px;height:40px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fa-solid fa-display" style="color:#1d4ed8;"></i></div>
+              <div>
+                <div style="font-weight:600;color:#1e293b;font-size:0.95rem;">Live Platform Demo</div>
+                <div style="color:#64748b;font-size:0.875rem;line-height:1.5;margin-top:0.2rem;">See the GovStrategy CoPilot Agent in action with your real-world document workflows.</div>
+              </div>
+            </div>
+            <div style="display:flex;gap:0.875rem;align-items:flex-start;">
+              <div style="width:40px;height:40px;border-radius:10px;background:#eff6ff;display:flex;align-items:center;justify-content:center;flex-shrink:0;"><i class="fa-solid fa-file-invoice-dollar" style="color:#1d4ed8;"></i></div>
+              <div>
+                <div style="font-weight:600;color:#1e293b;font-size:0.95rem;">Custom ROI Report</div>
+                <div style="color:#64748b;font-size:0.875rem;line-height:1.5;margin-top:0.2rem;">We'll model the specific cost savings and productivity gains for your team size and industry.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Contact form -->
+        <div style="background:#fff;border:1px solid #e2e8f0;border-radius:20px;padding:2.25rem;box-shadow:0 4px 16px rgba(0,0,0,0.06);">
+          <h3 style="margin-bottom:0.25rem;">Get in Touch</h3>
+          <p style="color:#64748b;font-size:0.9rem;margin-bottom:1.5rem;">Fill in your details and a sales rep will reach out within one business day.</p>
+
+          <form id="contactForm" onsubmit="handleFormSubmit(event)" style="display:flex;flex-direction:column;gap:1rem;">
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div>
+                <label style="display:block;font-size:0.8rem;font-weight:600;color:#374151;margin-bottom:0.35rem;">First Name <span style="color:#ef4444;">*</span></label>
+                <input type="text" placeholder="Jane" required style="width:100%;padding:0.65rem 0.875rem;border:1.5px solid #e2e8f0;border-radius:8px;font-size:0.9rem;color:#1e293b;outline:none;transition:border-color 0.15s;" onfocus="this.style.borderColor='#1d4ed8'" onblur="this.style.borderColor='#e2e8f0'" />
+              </div>
+              <div>
+                <label style="display:block;font-size:0.8rem;font-weight:600;color:#374151;margin-bottom:0.35rem;">Last Name <span style="color:#ef4444;">*</span></label>
+                <input type="text" placeholder="Smith" required style="width:100%;padding:0.65rem 0.875rem;border:1.5px solid #e2e8f0;border-radius:8px;font-size:0.9rem;color:#1e293b;outline:none;transition:border-color 0.15s;" onfocus="this.style.borderColor='#1d4ed8'" onblur="this.style.borderColor='#e2e8f0'" />
+              </div>
+            </div>
+
+            <div>
+              <label style="display:block;font-size:0.8rem;font-weight:600;color:#374151;margin-bottom:0.35rem;">Work Email <span style="color:#ef4444;">*</span></label>
+              <input type="email" placeholder="jane@company.com" required style="width:100%;padding:0.65rem 0.875rem;border:1.5px solid #e2e8f0;border-radius:8px;font-size:0.9rem;color:#1e293b;outline:none;transition:border-color 0.15s;" onfocus="this.style.borderColor='#1d4ed8'" onblur="this.style.borderColor='#e2e8f0'" />
+            </div>
+
+            <div>
+              <label style="display:block;font-size:0.8rem;font-weight:600;color:#374151;margin-bottom:0.35rem;">Company <span style="color:#ef4444;">*</span></label>
+              <input type="text" placeholder="Acme Corp" required style="width:100%;padding:0.65rem 0.875rem;border:1.5px solid #e2e8f0;border-radius:8px;font-size:0.9rem;color:#1e293b;outline:none;transition:border-color 0.15s;" onfocus="this.style.borderColor='#1d4ed8'" onblur="this.style.borderColor='#e2e8f0'" />
+            </div>
+
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+              <div>
+                <label style="display:block;font-size:0.8rem;font-weight:600;color:#374151;margin-bottom:0.35rem;">Team Size</label>
+                <select style="width:100%;padding:0.65rem 0.875rem;border:1.5px solid #e2e8f0;border-radius:8px;font-size:0.9rem;color:#1e293b;background:#fff;outline:none;transition:border-color 0.15s;" onfocus="this.style.borderColor='#1d4ed8'" onblur="this.style.borderColor='#e2e8f0'">
+                  <option value="">Select...</option>
+                  <option>1–25 people</option>
+                  <option>26–100 people</option>
+                  <option>101–500 people</option>
+                  <option>500–2,000 people</option>
+                  <option>2,000+ people</option>
+                </select>
+              </div>
+              <div>
+                <label style="display:block;font-size:0.8rem;font-weight:600;color:#374151;margin-bottom:0.35rem;">Interested In</label>
+                <select id="planSelect" style="width:100%;padding:0.65rem 0.875rem;border:1.5px solid #e2e8f0;border-radius:8px;font-size:0.9rem;color:#1e293b;background:#fff;outline:none;transition:border-color 0.15s;" onfocus="this.style.borderColor='#1d4ed8'" onblur="this.style.borderColor='#e2e8f0'">
+                  <option value="">Select plan...</option>
+                  <option>Starter</option>
+                  <option>Professional</option>
+                  <option>Enterprise</option>
+                  <option>Not sure yet</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label style="display:block;font-size:0.8rem;font-weight:600;color:#374151;margin-bottom:0.35rem;">What's your biggest version control challenge?</label>
+              <textarea rows="3" placeholder="Tell us a bit about your current workflow and where things break down..." style="width:100%;padding:0.65rem 0.875rem;border:1.5px solid #e2e8f0;border-radius:8px;font-size:0.9rem;color:#1e293b;resize:vertical;outline:none;font-family:inherit;transition:border-color 0.15s;" onfocus="this.style.borderColor='#1d4ed8'" onblur="this.style.borderColor='#e2e8f0'"></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;display:flex;font-size:1rem;padding:0.9rem 2rem;">
+              <i class="fa-solid fa-paper-plane" style="margin-right:0.5rem;"></i> Send Message
+            </button>
+            <p style="text-align:center;font-size:0.78rem;color:#94a3b8;">By submitting, you agree to our Privacy Policy. We'll never share your information.</p>
+          </form>
+
+          <!-- Success state (hidden by default) -->
+          <div id="formSuccess" style="display:none;text-align:center;padding:2rem 1rem;">
+            <div style="width:64px;height:64px;background:#dcfce7;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.75rem;color:#15803d;"><i class="fa-solid fa-circle-check"></i></div>
+            <h3 style="color:#1e293b;margin-bottom:0.5rem;">You're all set!</h3>
+            <p style="color:#64748b;font-size:0.95rem;line-height:1.6;">A GovStrategy sales expert will reach out within one business day. Check your inbox for a confirmation.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
   <script>
-    const pages = ['home', 'problem', 'solution', 'roi'];
+    const pages = ['home', 'problem', 'solution', 'roi', 'getstarted'];
 
     function showPage(id) {
       // Hide all pages
@@ -858,6 +1081,37 @@
     // Handle hash on load
     const hash = window.location.hash.replace('#', '');
     if (hash && pages.includes(hash)) showPage(hash);
+
+    // ── Pricing toggle ──
+    let isAnnual = false;
+    function toggleBilling() {
+      isAnnual = document.getElementById('billingToggle').checked;
+      document.getElementById('toggleTrack').style.background = isAnnual ? '#1d4ed8' : '#cbd5e1';
+      document.getElementById('toggleThumb').style.transform = isAnnual ? 'translateX(22px)' : 'translateX(0)';
+      document.querySelectorAll('.price-val').forEach(el => {
+        const val = isAnnual ? el.dataset.annual : el.dataset.monthly;
+        if (val) el.textContent = '$' + val;
+      });
+      document.querySelectorAll('.price-sub').forEach(el => {
+        el.textContent = isAnnual ? 'Billed annually (save 20%)' : 'Billed monthly';
+      });
+    }
+
+    // ── Pre-select plan in contact form ──
+    function scrollToContact(plan) {
+      const select = document.getElementById('planSelect');
+      if (select && plan) select.value = plan;
+      setTimeout(() => {
+        document.getElementById('contact-section').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 100);
+    }
+
+    // ── Form submission ──
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      document.getElementById('contactForm').style.display = 'none';
+      document.getElementById('formSuccess').style.display = 'block';
+    }
   </script>
 </body>
 </html>
