@@ -411,9 +411,9 @@
       </a>
       <div class="nav-links" id="navLinks">
         <button class="nav-link active" id="nav-home" onclick="showPage('home')">Home</button>
+        <button class="nav-link" id="nav-problem" onclick="showPage('problem')">Problem</button>
         <button class="nav-link" id="nav-solution" onclick="showPage('solution')">Solution</button>
         <button class="nav-link" id="nav-roi" onclick="showPage('roi')">ROI &amp; Impact</button>
-        <button class="nav-link" id="nav-about" onclick="showPage('about')">About</button>
         <button class="nav-cta" id="nav-getstarted" onclick="showPage('getstarted')">Get Started <i class="fa-solid fa-arrow-right"></i></button>
       </div>
       <button class="nav-mobile-toggle" onclick="toggleMobileMenu()" aria-label="Toggle menu">
@@ -1223,128 +1223,10 @@
     </div>
   </div>
 
-  <!-- ══════════════════════════════════════
-       PAGE 6 — ABOUT
-  ══════════════════════════════════════ -->
-  <div class="page" id="page-about">
 
-    <div style="background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 60%,#3b82f6 100%);color:#fff;padding:4.5rem 1.5rem 3.5rem;border-radius:0 0 3rem 3rem;text-align:center;">
-      <div class="container">
-        <div class="tag" style="background:rgba(255,255,255,0.15);color:#bfdbfe;">About</div>
-        <h1>Built for the Way<br>Enterprises Work</h1>
-        <p class="lead" style="color:#bfdbfe;max-width:600px;margin:1rem auto 0;">GovStrategy was founded by document governance and enterprise AI experts who lived the version chaos problem firsthand.</p>
-      </div>
-    </div>
-
-    <div class="section">
-
-      <!-- Mission -->
-      <div style="text-align:center;margin-bottom:4rem;">
-        <div class="tag tag-blue">Our Mission</div>
-        <h2 style="margin-bottom:1rem;">End Version Chaos. For Good.</h2>
-        <p class="lead" style="max-width:640px;margin:0 auto;">We believe every person in an organization deserves to find the right file, every time — without searching, guessing, or recreating work that already exists.</p>
-      </div>
-
-      <div class="grid-2" style="margin-bottom:4rem;">
-        <section class="content-block">
-          <h2 style="font-size:1.1rem;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;"><i class="fa-solid fa-bullseye" style="color:#1d4ed8;font-size:1rem;"></i> Why We Exist</h2>
-          <ul class="scan-list">
-            <li>Version sprawl costs enterprises millions in lost productivity every year</li>
-            <li>Existing tools manage files but don't govern them</li>
-            <li>AI adoption is blocked without a reliable document foundation</li>
-            <li>We built GovStrategy to solve all three — at once</li>
-          </ul>
-        </section>
-
-        <section class="content-block">
-          <h2 style="font-size:1.1rem;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.5rem;"><i class="fa-solid fa-landmark" style="color:#1d4ed8;font-size:1rem;"></i> Our Principles</h2>
-          <ul class="scan-list">
-            <li><strong>Clarity over complexity</strong> — governance should feel effortless</li>
-            <li><strong>AI as a co-worker</strong> — not a bolt-on feature</li>
-            <li><strong>Trust by default</strong> — every action is auditable and traceable</li>
-            <li><strong>Built to scale</strong> — from 10 users to 100,000</li>
-          </ul>
-        </section>
-      </div>
-
-      <hr class="divider" />
-
-      <!-- Team -->
-      <div class="tag tag-blue">The Team</div>
-      <h2 style="margin-bottom:2rem;">Leadership</h2>
-
-      <div class="grid-3" style="margin-bottom:4rem;">
-        <div class="card" style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#1e3a8a,#3b82f6);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.75rem;color:#fff;font-weight:800;">JC</div>
-          <h3>Jordan Chen</h3>
-          <p style="color:#1d4ed8;font-size:0.85rem;font-weight:600;margin:0.25rem 0 0.75rem;">Co-Founder &amp; CEO</p>
-          <ul class="scan-list" style="text-align:left;">
-            <li>Former VP of Enterprise at Confluence</li>
-            <li>15 years in document governance</li>
-            <li>Led governance at 3 Fortune 500 firms</li>
-          </ul>
-        </div>
-        <div class="card" style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#7c3aed,#a78bfa);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.75rem;color:#fff;font-weight:800;">MR</div>
-          <h3>Maya Reyes</h3>
-          <p style="color:#1d4ed8;font-size:0.85rem;font-weight:600;margin:0.25rem 0 0.75rem;">Co-Founder &amp; CTO</p>
-          <ul class="scan-list" style="text-align:left;">
-            <li>Previously led AI infra at Microsoft</li>
-            <li>Expert in large-scale document AI</li>
-            <li>10 patents in knowledge management</li>
-          </ul>
-        </div>
-        <div class="card" style="text-align:center;">
-          <div style="width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,#059669,#34d399);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:1.75rem;color:#fff;font-weight:800;">TP</div>
-          <h3>Tyler Park</h3>
-          <p style="color:#1d4ed8;font-size:0.85rem;font-weight:600;margin:0.25rem 0 0.75rem;">VP of Product</p>
-          <ul class="scan-list" style="text-align:left;">
-            <li>Former Head of Product, Box for Enterprise</li>
-            <li>Shipped governance tools used by 2M+ users</li>
-            <li>Obsessed with zero-friction UX</li>
-          </ul>
-        </div>
-      </div>
-
-      <hr class="divider" />
-
-      <!-- By the numbers -->
-      <div style="text-align:center;margin-bottom:2.5rem;">
-        <div class="tag tag-blue">By the Numbers</div>
-        <h2>GovStrategy Today</h2>
-      </div>
-
-      <div class="grid-3" style="margin-bottom:4rem;">
-        <div class="card" style="text-align:center;">
-          <div class="stat-num">2021</div>
-          <div class="stat-label">Founded</div>
-          <p class="stat-desc">Born out of a $4M version-control failure at a Fortune 200 company.</p>
-        </div>
-        <div class="card" style="text-align:center;">
-          <div class="stat-num">140+</div>
-          <div class="stat-label">Enterprise Customers</div>
-          <p class="stat-desc">Across financial services, healthcare, legal, and government sectors.</p>
-        </div>
-        <div class="card" style="text-align:center;">
-          <div class="stat-num">98%</div>
-          <div class="stat-label">Retention Rate</div>
-          <p class="stat-desc">Customers stay because version chaos, once solved, never comes back.</p>
-        </div>
-      </div>
-
-      <hr class="divider" />
-
-      <div style="text-align:center;">
-        <p class="lead" style="margin-bottom:1.5rem;">Ready to join them?</p>
-        <button class="btn btn-primary" onclick="showPage('getstarted')" style="margin-right:0.75rem;">Get Started <i class="fa-solid fa-arrow-right"></i></button>
-        <button class="btn" style="background:#f1f5f9;color:#1e293b;" onclick="showPage('solution')">View the Solution</button>
-      </div>
-
-    </div>
-  </div>
 
   <script>
-    const pages = ['home', 'problem', 'solution', 'roi', 'getstarted', 'about'];
+    const pages = ['home', 'problem', 'solution', 'roi', 'getstarted'];
 
     function showPage(id) {
       // Hide all pages
